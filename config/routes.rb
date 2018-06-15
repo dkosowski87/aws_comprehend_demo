@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :journals, only: %i(new create show) do
+    resources :entries, only: %i(new create) do
+      resource :text_analysis_report, only: %i(show)
+    end
+    resources :entries_reports, only: %i(index)
+  end
 end

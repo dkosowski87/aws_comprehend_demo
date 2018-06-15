@@ -1,0 +1,19 @@
+%table.table
+  %thead
+    %tr
+      %th Date range
+      %th Sentiment
+      %th Positive Score
+      %th Neutral Score
+      %th Negative Score
+      %th Mixed Score
+      %th Keywords
+    %tbody
+      %tr
+        %td= "#{@report.start_date} - #{@report.end_date}"
+        %td= @report.sentiment_report.sentiment
+        %td= @report.sentiment_report.positive_score.round(2)
+        %td= @report.sentiment_report.neutral_score.round(2)
+        %td= @report.sentiment_report.negative_score.round(2)
+        %td= @report.sentiment_report.mixed_score.round(2)
+        %td= @report.keywords_report.keywords.join(', ')

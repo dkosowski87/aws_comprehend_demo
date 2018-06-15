@@ -1,0 +1,12 @@
+= form_for @journal do |f|
+  = label_tag(:name, "Journal Name")
+  = f.text_field :name
+  - if @journal.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@journal.errors.count, "error")} prohibited this journal from being saved:"
+      %ul
+        - @journal.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'
