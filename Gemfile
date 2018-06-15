@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'aws-sdk-comprehend'
+gem 'aws-sdk-rekognition'
+gem 'aws-sdk-s3'
 gem 'haml-rails'
 
 group :development, :test do
