@@ -1,9 +1,10 @@
 class TextAnalysisReportsController < ApplicationController
   def index
-    reports = entries_reports
+    entries_reports
   end
 
   def show
+    report
   end
 
   private
@@ -16,7 +17,11 @@ class TextAnalysisReportsController < ApplicationController
     @entries ||= journal.entries_reports
   end
 
-  def find_report
-    @report = @entry.text_analysis_report
+  def entry
+    @entry ||= journal.entries.find(params[:entry_id])
+  end
+
+  def report
+    @report ||= entry.text_analysis_report
   end
 end
